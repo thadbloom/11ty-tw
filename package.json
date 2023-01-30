@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "This is a boilerplate. There are many like it but this one is built with 11ty and tailwindcss.",
   "scripts": {
-    "start": "npm run serve",
+    "start": "npm run serve && open http://localhost:8080",
     "serve": "run-p \"build:html -- --serve\" \"build:css -- --watch\"",
     "build": "npm-run-all build:css build:html",
     "build:html": "eleventy",

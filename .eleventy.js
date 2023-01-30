@@ -6,15 +6,15 @@ module.exports = function (eleventyConfig) {
   // base.njk aliased to base for easier access
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
 
-
   // Watch for CSS changes
   eleventyConfig.addWatchTarget("./.build/css/style.css");
   // Copy CSS build changes to dist css/style.css
   eleventyConfig.addPassthroughCopy({ "./.build/css/style.css": "css/style.css" });
 
-
-
-
+  // Open localhost url on runtime
+  eleventyConfig.setBrowserSyncConfig({
+    open: true
+  });
 
   // date shortcodes
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
