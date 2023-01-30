@@ -1,4 +1,7 @@
 .DS_Store
+.env
+.vscode
 package-lock.json
 node_modules
-public
+.build
+dist

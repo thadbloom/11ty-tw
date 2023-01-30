@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="px-6 max-w-2xl mx-auto">
+  
+
+  <a href="/" class="block w-10 h-10 mb-8 bg-black hover:bg-slate-600 focus:bg-slate-600 transition-colors duration-500">
+    <span class="sr-only">Home</span>
+  </a>
+
+
+  <div class="mb-4">
+    <h2 class="text-4xl font-black">{{ title }}</h2>
+  </div>
+
+  <div class="prose max-w-none">
+    {{ content | safe }}
+  </div>
+  
+  <p class="mt-8"><small>&copy; {% year %}</small></p>
+    
+</body>
+</html>
