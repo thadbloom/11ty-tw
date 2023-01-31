@@ -1,6 +1,8 @@
 {
   "name": "11ty-tw",
   "version": "0.1.0",
+  "author": "Thad Bloom",
+  "license": "MIT",
   "description": "This is a boilerplate. There are many like it but this one is built with 11ty and tailwindcss.",
   "scripts": {
     "start": "npm run serve && open http://localhost:8080",
@@ -10,10 +12,9 @@
     "build:css": "postcss src/_includes/css/style.css -o ./.build/css/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Thad Bloom",
-  "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "@tailwindcss/container-queries": "^0.1.0",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.13",

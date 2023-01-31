@@ -6,24 +6,45 @@
   <title>{{ title }}</title>
   <meta name="description" content="">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css">
 </head>
-<body class="px-6 max-w-2xl mx-auto">
-  
-
-  <a href="/" class="block w-10 h-10 mb-8 bg-black hover:bg-slate-600 focus:bg-slate-600 transition-colors duration-500">
-    <span class="sr-only">Home</span>
-  </a>
-
-
-  <div class="mb-4">
-    <h2 class="text-4xl font-black">{{ title }}</h2>
-  </div>
-
-  <div class="prose prose-stone max-w-none">
-    {{ content | safe }}
-  </div>
-  
-  <p class="mt-8"><small>&copy; {% year %}</small></p>
-    
+<body>
+  <div class="max-w-5xl mx-auto px-6">
+    <header class="flex items-center justify-between mb-8">
+      <a href="/" class="block w-16 h-16 bg-black hover:bg-slate-700 focus:bg-slate-700 transition-colors duration-500">
+        <span class="sr-only">Home</span>
+      </a>
+    </header>
+    <main class="mb-8 grid gap-8 lg:grid-cols-[minmax(0,_1fr)_28%]">
+      <article>
+        <header class="mb-8">
+          <h2 class="text-4xl font-black">{{ title }}</h2>
+          <p class="mt-4 text-2xl font-medium">{{ description }}</p>
+        </header>
+        <main class="prose max-w-none prose-stone prose-a:text-blue-600 hover:prose-a:no-underline">
+          {{ content | safe }}
+        </main>
+      </article>
+      <aside>
+        <div class="lg:sticky lg:top-4 px-9 py-5 rounded-md border border-black">
+          <p class="text-2xl font-black mb-2">Index</p>
+          <nav>
+            <ul class="list-square ml-3">
+              {% for post in collections.posts %}
+              <li>
+                <a class="block py-1 font-bold underline hover:no-underline focus:no-underline" href="{{ post.url }}">{{ post.data.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    </main>
+  </div>   
+  <footer class="py-3 bg-black text-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <p><small>&copy; {% year %}</small></p>
+    </div>
+  </footer>
 </body>
 </html>
