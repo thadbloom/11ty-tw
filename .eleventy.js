@@ -63,7 +63,7 @@ const imageShortcode = async (
     loading: 'lazy',
     decoding: 'async',
   });
-  const imgHtmlString = `<img ${imgAttributes}>`;
+  const imgHtmlString = `<img  ${imgAttributes}>`;
 
   const pictureAttributes = stringifyAttributes({
     class: className,
